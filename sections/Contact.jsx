@@ -27,7 +27,7 @@ const Contact = () => (
           variants={textVariant(0.2)}
           className="flex flex-col space-y-20 items-center py-6"
         >
-          <a href="mailto:imkpandey31@gmail.com" target="_blank">
+          <a href="mailto:imkpandey31@gmail.com" target="_blank" rel="noreferrer">
             <h1 className="font-bold justify-self-center tracking-wider text-center md:text-[60px] sm:text-[40px] text-[40px] md:leading-[80px] sm:leading-[50px] leading-[50px] cursor-pointer uppercase">
               Get in Touch
             </h1>

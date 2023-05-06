@@ -27,7 +27,7 @@ const Navbar = () => (
         <a href="#Contact" className="font-light text-[16px]">
           LET'S TALK
         </a>
-        <a href="https://github.com/imkpandey" target="_blank">
+        <a href="https://github.com/imkpandey" target="_blank" rel="noreferrer">
           <img
             src="github.svg"
             alt="github"

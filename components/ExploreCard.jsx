@@ -36,7 +36,7 @@ const ExploreCard = ({
           <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px]">
             {title}
           </h2>
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" rel="noreferrer">
             <div
               className={`${styles.flexCenter} w-[40px] h-[40px] rounded-[20px] glassmorphism mb-[16px]`}
             >
