@@ -22,7 +22,7 @@ export const exploreWorlds = [
   },
   {
     id: 'project-4',
-    imgUrl: '/Retrobox.png',
+    imgUrl: '/retrobox.png',
     title: 'Retro Box',
     description: 'React powered SPA with gsap scrolltrigger for animations',
     link: 'https://revelio.vercel.app/'

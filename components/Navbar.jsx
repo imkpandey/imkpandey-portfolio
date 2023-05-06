@@ -13,7 +13,7 @@ const Navbar = () => (
   >
     <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8`}>
       <img
-        src="imkpandey.svg"
+        src="IMKPANDEY.svg"
         alt="icon"
         className="mt-[-25px] w-[150px] h-[175px] object-contain"
       />
