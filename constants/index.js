@@ -17,22 +17,22 @@ export const exploreWorlds = [
     id: 'project-3',
     imgUrl: '/project-drip.png',
     title: 'Project Drip',
-    description: 'A modern ecommerce platform powered by NextJS, TypeScript, Postgres, Tailwind and Strapi',
-    link: 'https://revelio.vercel.app/'
+    description: 'A modern fullstack ecommerce platform powered by NextJS, TypeScript, Postgres, Tailwind and Strapi',
+    link: 'https://project-drip.vercel.app/'
   },
   {
     id: 'project-4',
-    imgUrl: '/retrobox.png',
-    title: 'Retro Box',
-    description: 'React powered SPA with gsap scrolltrigger for animations',
-    link: 'https://revelio.vercel.app/'
+    imgUrl: '/dribbble.png',
+    title: 'UI designs',
+    description: 'Web UI Designs posted on dribbble portfolio',
+    link: 'https://dribbble.com/imkpandey/'
   },
   {
     id: 'project-5',
     imgUrl: '/portfolio.png',
     title: 'My Portfolio Website',
     description: 'Made with NextJS, Tailwind and lots of debugging',
-    link: 'https://revelio.vercel.app/'
+    link: 'https://imkpandey.vercel.app/'
   },
 ];
 
