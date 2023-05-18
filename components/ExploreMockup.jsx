@@ -13,7 +13,7 @@ const ExploreMockup = ({ id, index, imgUrl, title }) => (
     <img
       src={imgUrl}
       alt={title}
-      className="absolute w-full h-full object-cover rounded-[10px] transition duration-300 ease-in-out hover:scale-110"
+      className="absolute w-[80%] h-full object-cover rounded-[10px] transition duration-300 ease-in-out hover:scale-110"
     />
 
   </motion.div>

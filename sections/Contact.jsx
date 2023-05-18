@@ -28,7 +28,7 @@ const Contact = () => (
           className="flex flex-col space-y-20 items-center py-6"
         >
           <a href="mailto:imkpandey31@gmail.com" target="_blank" rel="noreferrer">
-            <h1 className="font-bold justify-self-center tracking-wider text-center md:text-[60px] text-[40px] md:leading-[80px] leading-[50px] cursor-pointer uppercase">
+            <h1 className="font-bold justify-self-center tracking-wider text-center md:text-[60px] text-[30px] md:leading-[80px] leading-[40px] cursor-pointer uppercase">
               Get in Touch
             </h1>
           </a>

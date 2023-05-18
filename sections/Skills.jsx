@@ -25,7 +25,7 @@ const Skills = () => (
         </motion.h2>
         <motion.h1
           variants={textVariant(0.1)}
-          className="max-w-[85%] pt-4 font-bold justify-self-center tracking-wider text-center md:text-[50px] sm:text-[25px] text-[40px] md:leading-[80px] sm:leading-[30px] leading-[50px] uppercase"
+          className="max-w-[85%] pt-4 font-bold justify-self-center tracking-wider text-center md:text-[50px] text-[25px] md:leading-[80px] leading-[30px] uppercase"
         >
           Tech Stack
         </motion.h1>

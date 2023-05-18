@@ -24,7 +24,7 @@ const Hero = () => (
           variants={textVariant(3.6)}
           className="flex flex-col space-y-20 items-center py-6"
         >
-          <h1 className="max-w-[85%] font-bold justify-self-center tracking-wider text-center text-[28px] md:text-[60px] leading-[40px] md:leading-[80px] uppercase">
+          <h1 className="max-w-[85%] font-bold justify-self-center tracking-wider text-center text-[25px] md:text-[60px] leading-[40px] md:leading-[80px] uppercase">
             I AM A FRONT-END WEB DEVELOPER WITH A KEEN EYE FOR WEB DESIGNING AND AESTHETICS
           </h1>
           {/* <motion.div
