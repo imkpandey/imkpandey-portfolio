@@ -5,7 +5,7 @@ import { fadeIn } from "../utils/motion";
 
 const ExploreMockup = ({ id, index, imgUrl, title }) => (
   <motion.div
-    variants={fadeIn("up", "spring", index * 0.75, 1)}
+    variants={fadeIn("up", "spring", index * 0.75, 1.5)}
     className={
       "relative overflow-hidden bg-cover bg-no-repeat flex flex-col items-center justify-center w-[500px] h-[300px] md:w-[700px] md:h-[500px] lg:w-[900px] lg:h-[600px] transition-[flex] duration-[1s] ease-out-flex cursor-pointer"
     }

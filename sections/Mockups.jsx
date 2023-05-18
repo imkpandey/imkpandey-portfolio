@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import styles from "../styles";
-import { staggerContainer, textVariant } from "../utils/motion";
+import { staggerContainer, mockupVariant } from "../utils/motion";
 import { mockups } from "../constants";
 import ExploreMockup from "../components/ExploreMockup";
 
@@ -13,12 +13,12 @@ const Mockups = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.10 }}
         className={`${styles.innerWidth} mx-auto flex flex-col max-w-[100%]`}
       >
         <div className="flex flex-col justify-center items-center relative">
           <motion.h2
-            variants={textVariant(0.15)}
+            variants={mockupVariant( 0.5, 0.5 )}
             className="text-primary-gray font-bold uppercase tracking-wide"
           >
             Featured UI Mockups
