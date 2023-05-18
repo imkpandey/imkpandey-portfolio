@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import styles from "../styles";
-import { slideIn, staggerContainer, textVariant } from "../utils/motion";
+import { staggerContainer, textVariant } from "../utils/motion";
 
 const Hero = () => (
   <section className={`${styles.yPaddings}`} id="Hero">
@@ -16,7 +16,7 @@ const Hero = () => (
       <div className="flex justify-center items-center flex-col relative z-10">
         <motion.h2
           variants={textVariant(1.1)}
-          className="text-primary-gray text-[20px] font-bold uppercase"
+          className="text-primary-gray md:text-[20px] text- pt-6 font-bold uppercase"
         >
           Hi, My name is kartikey pandey
         </motion.h2>
@@ -24,7 +24,7 @@ const Hero = () => (
           variants={textVariant(3.6)}
           className="flex flex-col space-y-20 items-center py-6"
         >
-          <h1 className="max-w-[85%] font-bold justify-self-center tracking-wider text-center text-[40px] sm:text-[40px] md:text-[60px] md:leading-[80px] sm:leading-[40px] leading-[40px] uppercase">
+          <h1 className="max-w-[85%] font-bold justify-self-center tracking-wider text-center text-[28px] md:text-[60px] leading-[40px] md:leading-[80px] uppercase">
             I AM A FRONT-END WEB DEVELOPER WITH A KEEN EYE FOR WEB DESIGNING AND AESTHETICS
           </h1>
           {/* <motion.div

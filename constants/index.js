@@ -15,14 +15,14 @@ export const exploreWorlds = [
   },
   {
     id: 'project-3',
-    imgUrl: '/project-drip.png',
+    imgUrl: '/project-drip.svg',
     title: 'Project Drip',
     description: 'A modern fullstack ecommerce platform powered by NextJS, TypeScript, Postgres, Tailwind and Strapi',
     link: 'https://project-drip.vercel.app/'
   },
   {
     id: 'project-4',
-    imgUrl: '/dribbble.png',
+    imgUrl: '/dribbble.svg',
     title: 'UI designs',
     description: 'Web UI Designs posted on dribbble portfolio',
     link: 'https://dribbble.com/imkpandey/'

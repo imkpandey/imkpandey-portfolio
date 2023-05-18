@@ -8,7 +8,7 @@ import Skill from "../components/Skill";
 import { stacks } from "../constants";
 
 const Skills = () => (
-  <section className={`${styles.yPaddings} h-screen`} id="Skills">
+  <section className={`${styles.yPaddings}`} id="Skills">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
