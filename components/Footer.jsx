@@ -20,7 +20,7 @@ const Footer = () => (
         </h2>
         <h2 className="font-bold text-primary-gray text-[16px]">
         <a
-            href="https://linkedin.com/imkpandey"
+            href="https://linkedin.com/in/imkpandey/"
             target="_blank"
             rel="noreferrer"
           >
