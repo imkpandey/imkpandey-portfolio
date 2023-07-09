@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Matter';
+    src: url('Matter-Regular.eot');
+    src: url('Matter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Matter-Regular.woff2') format('woff2'),
+        url('Matter-Regular.woff') format('woff'),
+        url('Matter-Regular.ttf') format('truetype'),
+        url('Matter-Regular.svg#Matter-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

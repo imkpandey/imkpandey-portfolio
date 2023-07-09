@@ -15,17 +15,17 @@ export const exploreWorlds = [
   },
   {
     id: 'project-3',
-    imgUrl: '/project-drip.svg',
+    imgUrl: '/project-drip.png',
     title: 'Project Drip',
     description: 'A modern fullstack ecommerce platform powered by NextJS, TypeScript, Postgres, Tailwind and Strapi',
     link: 'https://project-drip.vercel.app/'
   },
   {
     id: 'project-4',
-    imgUrl: '/dribbble.svg',
-    title: 'UI designs',
-    description: 'Web UI Designs posted on dribbble portfolio',
-    link: 'https://dribbble.com/imkpandey/'
+    imgUrl: '/nirvan.png',
+    title: 'Nirvan',
+    description: 'Nirvan is a virtual relaxing space where users can enjoy music while they study, code or simply relax',
+    link: 'https://nirvan.vercel.app/'
   },
   {
     id: 'project-5',
@@ -41,21 +41,25 @@ export const mockups = [
     id: '01',
     imgUrl: '/mockup2.png',
     title: 'Mockup 1',
+    link: "https://dribbble.com/shots/19761593-Music-Artist-Web-Design-Idea",
   },
   {
     id: '02',
     imgUrl: '/mockup1.png',
     title: 'Mockup 2',
+    link: "https://dribbble.com/shots/19761593-Music-Artist-Web-Design-Idea",
   },
   {
     id: '03',
     imgUrl: '/mockup3.png',
     title: 'Mockup 3',
+    link: "https://dribbble.com/shots/19761764-Music-Streaming-App-Landing-Page",
   },
   {
     id: '04',
     imgUrl: '/mockup4.png',
     title: 'Mockup 4',
+    link: "https://dribbble.com/shots/19669915-Crypto-Ad-Agency-Web-Design",
   },
 ];
 
