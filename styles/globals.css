@@ -3,27 +3,34 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Shapiro';
-    src: url('../shapiro/Shapiro-95SuperExtd.eot'); /* IE9 Compat Modes */
-    src: url('../shapiro/Shapiro-95SuperExtd.eot?') format('embedded-opentype'), /* IE6-IE8 */
-        url('../shapiro/Shapiro-95SuperExtd.woff2') format('woff2'), /* Super Modern Browsers */
-        url('../shapiro/Shapiro-95SuperExtd.woff') format('woff'), /* Pretty Modern Browsers */
-        url('../shapiro/Shapiro-95SuperExtd.ttf')  format('truetype'), /* Safari, Android, iOS */
-        url('../shapiro/Shapiro-95SuperExtd.svg#svgShapiro-95SuperExtd') format('svg'); /* Legacy iOS */
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Shapiro";
+  src: url("../shapiro/Shapiro-95SuperExtd.eot"); /* IE9 Compat Modes */
+  src: url("../shapiro/Shapiro-95SuperExtd.eot?") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../shapiro/Shapiro-95SuperExtd.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../shapiro/Shapiro-95SuperExtd.woff")
+      format("woff"),
+    /* Pretty Modern Browsers */ url("../shapiro/Shapiro-95SuperExtd.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../shapiro/Shapiro-95SuperExtd.svg#svgShapiro-95SuperExtd")
+      format("svg"); /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gilroy-Light';
-    src: url('../shapiro/Gilroy-Light.eot'); /* IE9 Compat Modes */
-    src: url('../shapiro/Gilroy-Light.eot?') format('embedded-opentype'), /* IE6-IE8 */
-        url('../shapiro/Gilroy-Light.woff2') format('woff2'), /* Super Modern Browsers */
-        url('../shapiro/Gilroy-Light.woff') format('woff'), /* Pretty Modern Browsers */
-        url('../shapiro/Gilroy-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
-        url('../shapiro/Gilroy-Light.svg#svgGilroy-Light') format('svg'); /* Legacy iOS */
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Gilroy-Light";
+  src: url("../shapiro/Gilroy-Light.eot"); /* IE9 Compat Modes */
+  src: url("../shapiro/Gilroy-Light.eot?") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../shapiro/Gilroy-Light.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../shapiro/Gilroy-Light.woff")
+      format("woff"),
+    /* Pretty Modern Browsers */ url("../shapiro/Gilroy-Light.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../shapiro/Gilroy-Light.svg#svgGilroy-Light") format("svg"); /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
 }
 
 * {
@@ -35,5 +42,23 @@
 }
 
 h1 {
-  font-family: 'Shapiro';
+  font-family: "Shapiro";
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(100, 100, 100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgb(68, 68, 68);
+  border-radius: 10px;
 }
