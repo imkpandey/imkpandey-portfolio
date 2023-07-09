@@ -1,9 +1,9 @@
 export const exploreWorlds = [
   {
     id: 'project-1',
-    imgUrl: '/revelio.png',
+    imgUrl: '/REVELIO.png',
     title: 'Revelio AI',
-    description: 'RevelioAI generates Alt Text for images using Replicate AI API. Built with NextJS, Tailwind and Upstash Redis',
+    description: 'RevelioAI generates Alt Text for images using Replicate AI API. Built with NextJS, Tailwind and Typescript',
     link: 'https://revelio.vercel.app/'
   },
   {
