@@ -8,12 +8,8 @@
   --background-end-rgb: #000000;
 }
 
-html,
 body {
   scroll-behavior: smooth;
-}
-
-body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-end-rgb));
 }
