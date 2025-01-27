@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: #f8f6f2;
+  --background-end-rgb: #000000;
+}
+
+body {
+  scroll-behavior: smooth;
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-end-rgb));
+}
+
+.Mbg_col_el {
+  width: 1px;
+  display: block;
+  background: linear-gradient(to bottom, transparent 50%, #000000 50%);
+  background-size: 100% 8px;
+}
+
+.clipped {
+  clip-path: polygon(50% 0, 100% 0, 100% 85%, 90% 100%, 50% 100%, 0 100%, 0 0);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+canvas {
+  opacity: 0;
+  touch-action: none;
+  animation: fade-in 1.5s ease 0.5s forwards;
+}
+
+.active {
+  color: white;
+}
+
+.nav-link:hover > span > span,
+.nav-link:focus > span > span {
+  transform: translateY(-200%);
+}
+
+.black-cat {
+  box-shadow: 20px 20px 0 0 rgba(241, 139, 50, 1),
+    40px 20px 0 0 rgba(16, 16, 16, 1), 60px 20px 0 0 rgba(255, 255, 255, 1),
+    80px 20px 0 0 rgba(16, 16, 16, 1), 100px 20px 0 0 rgba(16, 16, 16, 1),
+    120px 20px 0 0 rgba(16, 16, 16, 1), 140px 20px 0 0 rgba(16, 16, 16, 1),
+    160px 20px 0 0 rgba(16, 16, 16, 1), 180px 20px 0 0 rgba(16, 16, 16, 1),
+    200px 20px 0 0 rgba(16, 16, 16, 1), 220px 20px 0 0 rgba(16, 16, 16, 1),
+    240px 20px 0 0 rgba(16, 16, 16, 1), 260px 20px 0 0 rgba(16, 16, 16, 1),
+    280px 20px 0 0 rgba(255, 255, 255, 1), 300px 20px 0 0 rgba(16, 16, 16, 1),
+    320px 20px 0 0 rgba(241, 139, 50, 1), 20px 40px 0 0 rgba(250, 228, 74, 1),
+    40px 40px 0 0 rgba(16, 16, 16, 1), 60px 40px 0 0 rgba(16, 16, 16, 1),
+    80px 40px 0 0 rgba(223, 109, 47, 1), 100px 40px 0 0 rgba(16, 16, 16, 1),
+    120px 40px 0 0 rgba(16, 16, 16, 1), 140px 40px 0 0 rgba(16, 16, 16, 1),
+    160px 40px 0 0 rgba(16, 16, 16, 1), 180px 40px 0 0 rgba(16, 16, 16, 1),
+    200px 40px 0 0 rgba(16, 16, 16, 1), 220px 40px 0 0 rgba(16, 16, 16, 1),
+    240px 40px 0 0 rgba(16, 16, 16, 1), 260px 40px 0 0 rgba(223, 109, 47, 1),
+    280px 40px 0 0 rgba(16, 16, 16, 1), 300px 40px 0 0 rgba(16, 16, 16, 1),
+    320px 40px 0 0 rgba(250, 228, 74, 1), 20px 60px 0 0 rgba(16, 16, 16, 1),
+    40px 60px 0 0 rgba(249, 224, 41, 1), 60px 60px 0 0 rgba(231, 132, 55, 1),
+    80px 60px 0 0 rgba(216, 196, 46, 1), 100px 60px 0 0 rgba(73, 41, 24, 1),
+    120px 60px 0 0 rgba(16, 16, 16, 1), 140px 60px 0 0 rgba(16, 16, 16, 1),
+    160px 60px 0 0 rgba(16, 16, 16, 1), 180px 60px 0 0 rgba(16, 16, 16, 1),
+    200px 60px 0 0 rgba(16, 16, 16, 1), 220px 60px 0 0 rgba(16, 16, 16, 1),
+    240px 60px 0 0 rgba(73, 41, 24, 1), 260px 60px 0 0 rgba(216, 196, 46, 1),
+    280px 60px 0 0 rgba(231, 132, 55, 1), 300px 60px 0 0 rgba(249, 224, 41, 1),
+    320px 60px 0 0 rgba(16, 16, 16, 1);
+  height: 20px;
+  width: 20px;
+}
