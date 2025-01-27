@@ -6,7 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 
 // Use lenis smooth scroll
-const lenis = new Lenis({ syncTouch: true });
+const lenis = new Lenis({ syncTouch: true, touchMultiplier: 0 });
 addEffect((t) => lenis.raf(t));
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000); // Convert time from seconds to milliseconds
