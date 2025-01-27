@@ -27,7 +27,6 @@ export default function Scene({ style, ...props }) {
         left: 0,
         width: "100vw",
         height: "100vh",
-        pointerEvents: "none",
         ...style,
       }}
       eventSource={document.body}
