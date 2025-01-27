@@ -222,7 +222,7 @@ export default function Home() {
         className="relative flex items-start pb-16 md:pb-36 justify-center w-full min-h-screen bg-[#101010] text-[#edebe8] overflow-hidden"
       >
         <div className="work-list flex flex-col w-full">
-          <p className="about-text text-lg px-0 md:px-32 mb-8 uppercase tracking-[0.3em]">
+          <p className="about-text text-lg pl-8 md:pl-32 mb-8 uppercase tracking-[0.3em]">
             MY EXPERIMENTS WITH WEB
           </p>
           {projects.map((project, index) => (
@@ -235,14 +235,14 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <div className="project-title absolute px-0 md:px-28 inset-0 flex items-center w-full h-full text-3xl md:text-9xl font-bold uppercase text-[#edebe8] bg-[#101010] group-hover:bg-yellow-500 group-hover:text-[#fff] transition-all duration-500">
+                <div className="project-title absolute pl-8 md:pl-28 pr-0 md:pr-28 inset-0 flex items-center w-full h-full text-3xl md:text-9xl font-bold uppercase text-[#edebe8] bg-[#101010] group-hover:bg-yellow-500 group-hover:text-[#fff] transition-all duration-500">
                   <span className="inline-block text-center whitespace-nowrap">
                     {project.name}
                   </span>
                 </div>
                 <div className="project-description absolute inset-0 flex items-center justify-between w-full h-full cursor-pointer">
                   <div className="w-2/3 h-full hidden md:block" />
-                  <div className="w-full md:w-1/3 h-full px-0 md:px-28 flex items-center justify-start md:justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 text-sm text-[#bcb3a8] bg-[#101010] group-hover:bg-yellow-500 group-hover:text-[#fff]">
+                  <div className="w-full md:w-1/3 h-full px-8 md:px-28 flex items-center justify-start md:justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 text-sm text-[#bcb3a8] bg-[#101010] group-hover:bg-yellow-500 group-hover:text-[#fff]">
                     {project.description}
                   </div>
                 </div>
@@ -268,7 +268,7 @@ export default function Home() {
         <div className="set-three w-1/12 h-[200vh] bg-[#101010]" />
         <div className="set-three w-1/12 h-[200vh] bg-[#101010]" />
         <div className="set-two w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[200vh] flex flex-col items-center justify-center gap-4">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[200vh] flex flex-col items-center justify-center gap-8">
           <h2 className="contact-head text-[clamp(2.5rem,7vw,7rem)] tracking-tight leading-tight text-center font-black uppercase text-yellow-500 z-[2]">
             <span className="w-fit h-fit overflow-hidden">Not afraid of</span>
             <br />
@@ -279,13 +279,12 @@ export default function Home() {
             </span>
             <br />
             <span className="w-fit h-fit overflow-hidden">anime?</span>
-            <br />
-            <span className="text-[clamp(2rem,4vw,4rem)] font-semibold w-[90%] md:w-fit h-fit overflow-hidden text-gray-300">
-              <Link href="mailto:imkpandey31@gmail.com">
-                Let&apos;s make something big together*
-              </Link>
-            </span>
           </h2>
+          <p className="text-[clamp(2rem,4vw,4rem)] mt-8 md:mt-4 text-center uppercase font-semibold w-[90%] md:w-fit h-fit overflow-hidden text-gray-300">
+            <Link href="mailto:imkpandey31@gmail.com">
+              Let&apos;s make something big together*
+            </Link>
+          </p>
           <div className="content w-[360px] h-[100px] z-[2] overflow-hidden">
             <div className="black-cat"></div>
           </div>
