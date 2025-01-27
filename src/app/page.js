@@ -190,7 +190,7 @@ export default function Home() {
   return (
     <main ref={container} className="flex-1">
       <section className="hero flex items-center justify-center w-full h-screen border-y bg-[#f2f2f2]">
-        <div className="container w-full">
+        <div className="container w-full pointer-events-none">
           <View className="w-full h-screen">
             <Float speed={1} rotationIntensity={2} floatIntensity={1}>
               <Blob scale={2} />
