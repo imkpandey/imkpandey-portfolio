@@ -210,7 +210,7 @@ export default function Home() {
             ABOUT ME
           </p>
           <p className="about-copy text-3xl md:text-6xl font-medium">
-            Hi, I&apos;m a{" "}
+            Hi, I&apos;m Kartikey, a{" "}
             <span className="text-yellow-500">self-proclaimed</span> creative
             web developer. I create bespoke web experiences by spending half of
             my time coding and other half convincing my code to work.
