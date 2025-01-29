@@ -27,10 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        style={{ overscrollBehaviorY: "none" }}
-        className={poppins.className}
-      >
+      <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <div className="flex flex-col min-h-screen">
             <header className="px-4 lg:px-6 h-14 flex items-center z-[99] bg-[#f2f2f2]">
