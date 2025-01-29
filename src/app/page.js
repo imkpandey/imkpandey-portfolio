@@ -113,6 +113,8 @@ export default function Home() {
       const setOfColumnsThree = gsap.utils.toArray(".set-three");
       const contactText = new SplitType(".contact-head");
       const contactWords = contactText.words;
+      const contactSubtext = new SplitType(".contact-subhead");
+      const contactSubwords = contactSubtext.words;
 
       gsap
         .timeline({
@@ -163,6 +165,15 @@ export default function Home() {
         )
         .from(
           contactWords,
+          {
+            yPercent: 100,
+            stagger: 0.03,
+            ease: "power3.out",
+          },
+          "-=0.5"
+        )
+        .from(
+          contactSubwords,
           {
             yPercent: 100,
             stagger: 0.03,
@@ -280,7 +291,7 @@ export default function Home() {
             <br />
             <span className="w-fit h-fit overflow-hidden">anime?</span>
           </h2>
-          <p className="text-[clamp(2rem,4vw,4rem)] mt-8 md:mt-4 text-center uppercase font-semibold w-[90%] md:w-fit h-fit overflow-hidden text-gray-300">
+          <p className="contact-subhead text-[clamp(2rem,4vw,4rem)] mt-8 md:mt-4 text-center uppercase font-semibold w-[90%] md:w-fit h-fit overflow-hidden text-gray-300">
             <Link href="mailto:imkpandey31@gmail.com">
               Let&apos;s make something big together*
             </Link>
