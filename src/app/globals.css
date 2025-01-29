@@ -36,7 +36,7 @@ body {
 
 canvas {
   opacity: 0;
-  touch-action: auto;
+  touch-action: none;
   animation: fade-in 1.5s ease 0.5s forwards;
 }
 
