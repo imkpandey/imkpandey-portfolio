@@ -187,25 +187,31 @@ export default function Home() {
         });
       });
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: projectsRef.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        })
-        .from(
-          projectWords,
-          {
-            stagger: 0.05,
-            filter: "blur(10px)",
-            opacity: 0,
-            ease: "power3.out",
-          },
-          "-=0.5"
-        );
+      gsap.from(projectWords, {
+        stagger: 0.05,
+        filter: "blur(10px)",
+        opacity: 0,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: projectWords,
+          start: "top 90%",
+          end: "bottom 70%",
+          scrub: true,
+        },
+      });
+
+      gsap.from(".project-container", {
+        opacity: 0,
+        filter: "blur(10px)",
+        ease: "power3.out",
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".project-container",
+          start: "top 90%",
+          end: "bottom 70%",
+          scrub: true,
+        },
+      });
     }, container);
 
     return () => ctx.revert();
@@ -235,7 +241,7 @@ export default function Home() {
               My Experiments with Web
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center w-[95%] md:w-[60%] h-full">
+          <div className="project-container flex flex-col justify-center items-center w-[95%] md:w-[60%] h-full">
             {projects.map((project, index) => {
               return (
                 <Link
