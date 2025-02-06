@@ -2,18 +2,16 @@ import { Text } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 
 export default function Typography({
-  LINE_1 = "CREATIVE",
-  LINE_2 = "END",
-  LINE_3 = "DEVELOPER",
-  LINE_4 = "FRONT",
-  SIZE = 15,
+  LINE_1 = "Kartikey Pandey",
+  LINE_2 = "Just A Chill Creative Developer",
+  SIZE = 6,
 }) {
   const { width, height } = useThree((state) => state.viewport);
   const vw = (size) => (width * size) / 100;
   const vh = (size) => (height * size) / 100;
   return (
     <>
-      <Text
+      {/* <Text
         material-transparent={false}
         fontSize={vw(SIZE)}
         position={[0, vh(35), 0]}
@@ -22,37 +20,26 @@ export default function Typography({
         letterSpacing={-0.05}
       >
         {LINE_1}
-      </Text>
-      <Text
-        material-transparent={false}
-        fontSize={vw(SIZE / 1.5)}
-        position={[vw(-30), vh(6), 0]}
-        color={"#101010"}
-        font={"/Shockwave.ttf"}
-        letterSpacing={-0.05}
-      >
-        {LINE_4}
-      </Text>
-      <Text
-        material-transparent={false}
-        fontSize={vw(SIZE / 1.5)}
-        position={[vw(27), vh(6), 0]}
-        // fontWeight={800}
-        font={"/Shockwave.ttf"}
-        color={"#101010"}
-        letterSpacing={-0.05}
-      >
-        {LINE_2}
-      </Text>
+      </Text> */}
       <Text
         material-transparent={false}
         fontSize={vw(SIZE)}
+        position={[0, vh(30), 0]}
+        color={"#404040"}
+        font={"/Oxygen-Regular.ttf"}
+        letterSpacing={-0.01}
+      >
+        {LINE_1}
+      </Text>
+      <Text
+        material-transparent={false}
+        fontSize={SIZE / 2.5}
         color={"#101010"}
-        font={"/Oswald.ttf"}
-        position={[0, vh(-25), 0]}
+        font={"/Oxygen.ttf"}
+        position={[0, vh(42), 0]}
         letterSpacing={-0.05}
       >
-        {LINE_3}
+        {LINE_2}
       </Text>
     </>
   );

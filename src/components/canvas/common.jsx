@@ -31,15 +31,14 @@ export default function Common({ color, controls }) {
   return (
     <>
       {/* color && <color attach='background' args={[color]} /> */}
-      {/* <ambientLight intensity={Math.PI} />
-      <directionalLight intensity={5} castShadow /> */}
-      <spotLight position={[0, 0, 0]} penumbra={1} castShadow angle={0.2} />
-      <Environment preset="city" blur={1} backgroundBlurriness={1} />
+      <ambientLight intensity={2} />
+      <directionalLight intensity={1.5} castShadow />
+      <Environment preset="warehouse" />
       {/* <EffectComposer disableNormalPass>
         <Bloom mipmapBlur luminanceThreshold={0.8} intensity={0.1} />
       </EffectComposer> */}
       {/* <Environment preset="studio" backgroundIntensity={0.1} blur={0.5} /> */}
-      <directionalLight position={[-10, 0, -10]} color={color} intensity={3} />
+      <directionalLight position={[-5, 0, 0]} color={"#000000"} intensity={3} />
       {/* <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} /> */}
       {/* <Rig /> */}
       {controls && (

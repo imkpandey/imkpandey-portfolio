@@ -16,6 +16,9 @@ import { useGSAP } from "@gsap/react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import Typography from "@/components/canvas/typography";
+import hero from "@/assets/hero.jpg";
+import { Divide } from "lucide-react";
+import Project from "@/components/ui/Project";
 
 const Common = dynamic(() => import("@/components/canvas/common"), {
   ssr: false,
@@ -59,140 +62,156 @@ const View = dynamic(
 const projects = [
   {
     name: "MINDPOP",
-    description:
-      "A creative website made for a creative digital marketing agency",
+    subtitle: "Design & Development",
+    src: "/mindpop.jpg",
     link: "https://mindpop.vercel.app",
+    color: "#000000",
   },
   {
     name: "MAHADEV DHAM 3D",
-    description:
-      "A 3D experiment done for a client inspired from hindu mythology",
+    subtitle: "Design & Development",
+    src: "/karauli.jpg",
     link: "https://karauli.vercel.app",
+    color: "#8C8C8C",
   },
   {
-    name: "GODRAY",
-    description: "Implementatio of godrays in react-three-fiber",
+    name: "STARCLINCH",
+    subtitle: "Design & Development",
+    src: "/starclinch.jpg",
+    link: "https://starclinch-eta.vercel.app",
+    color: "#EFE8D3",
+  },
+  {
+    name: "AFK PHARMA WEBSITE",
+    subtitle: "Design & Development",
+    src: "/afk.jpg",
+    link: "https://afk-pharma.vercel.app",
+    color: "#706D63",
+  },
+  {
+    name: "R3F-GODRAY",
+    subtitle: "Three.js Experiment",
+    src: "/",
     link: "https://r3f-godray.vercel.app",
+    color: "#706D63",
   },
   {
-    name: "INFINITY TRAILS",
-    description: "infinity trail lights experimentation done in r3f",
-    link: "https://r3f-infinity-trails.vercel.app",
-  },
-  {
-    name: "RIPPLE",
-    description: "ripple shader implemented in r3f",
+    name: "R3F-RIPPLE",
+    subtitle: "Three.js Experiment",
+    src: "/",
     link: "https://r3f-ripple.vercel.app",
+    color: "#706D63",
   },
   {
-    name: "AKIRA LIGHTS",
-    description: "r3f tunnel lights inspired from Akira movie",
-    link: "https://akira-lights.vercel.app",
-  },
-  {
-    name: "AMONG US ODE",
-    description: "An ode to among us crewmates",
-    link: "https://amongus-3d.vercel.app",
+    name: "R3F-INFINITY-TRAIL",
+    subtitle: "Three.js Experiment",
+    src: "/",
+    link: "https://r3f-infinity-trail.vercel.app",
+    color: "#706D63",
   },
 ];
 
 export default function Home() {
   const container = useRef(null);
   const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const [modal, setModal] = useState({ active: false, index: 0 });
+
+  const handleMouseEnter = (index) => {
+    setModal({ active: true, index });
+  };
+
+  const handleMouseLeave = () => {
+    setModal({ active: false, index: 0 });
+  };
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
+      const curtains = gsap.utils.toArray(".curtain");
+      const projectHead = new SplitType(".project-head");
+      const projectWords = projectHead.words;
+
+      const aboutHead = new SplitType(".about-text");
+      const aboutHeadWords = aboutHead.words;
       const aboutText = new SplitType(".about-copy");
-      const aboutChars = aboutText.chars;
+      const aboutWords = aboutText.words;
+      const aboutCopyTwo = new SplitType(".about-copy-two");
+      const aboutWordsTwo = aboutCopyTwo.words;
+      const aboutCopyThree = new SplitType(".about-copy-three");
+      const aboutWordsThree = aboutCopyThree.words;
+      const aboutCopyFour = new SplitType(".about-copy-four");
+      const aboutWordsFour = aboutCopyFour.words;
+      const aboutCopyFive = new SplitType(".about-copy-five");
+      const aboutWordsFive = aboutCopyFive.words;
+      const aboutCopySix = new SplitType(".about-copy-six");
+      const aboutWordsSix = aboutCopySix.words;
+      const aboutCopySeven = new SplitType(".about-copy-seven");
+      const aboutWordsSeven = aboutCopySeven.words;
+      const aboutCopyEight = new SplitType(".about-copy-eight");
+      const aboutWordsEight = aboutCopyEight.words;
+      const aboutCopyNine = new SplitType(".about-copy-nine");
+      const aboutWordsNine = aboutCopyNine.words;
+      const aboutCopyTen = new SplitType(".about-copy-ten");
+      const aboutWordsTen = aboutCopyTen.words;
+      // const aboutCopyEleven = new SplitType(".about-copy-eleven");
+      // const aboutWordsEleven = aboutCopyEleven.words;
 
-      const setOfColumnsOne = gsap.utils.toArray(".set-one");
-      const setOfColumnsTwo = gsap.utils.toArray(".set-two");
-      const setOfColumnsThree = gsap.utils.toArray(".set-three");
-      const contactText = new SplitType(".contact-head");
-      const contactWords = contactText.words;
-      const contactSubtext = new SplitType(".contact-subhead");
-      const contactSubwords = contactSubtext.words;
+      const aboutCopyElements = gsap.utils.toArray([
+        aboutHeadWords,
+        aboutWords,
+        aboutWordsTwo,
+        aboutWordsThree,
+        aboutWordsFour,
+        aboutWordsFive,
+        aboutWordsSix,
+        aboutWordsSeven,
+        aboutWordsEight,
+        aboutWordsNine,
+        aboutWordsTen,
+      ]);
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: aboutRef.current,
-            start: "top 60%",
-            end: "bottom 90%",
-            scrub: 1,
-          },
-        })
-        .from(aboutChars, {
-          opacity: 0.2,
-          stagger: 0.02,
+      aboutCopyElements.forEach((element) => {
+        gsap.from(element, {
+          opacity: 0,
+          filter: "blur(10px)",
           ease: "power3.out",
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 90%", // Animation starts when the top of the element reaches 80% of the viewport
+            end: "bottom 70%", // Animation ends when the bottom of the element reaches 60% of the viewport
+            scrub: true, // Smooth scroll animation
+          },
         });
+      });
 
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: contactRef.current,
-            start: "top 30%",
+            trigger: projectsRef.current,
+            start: "top bottom",
             end: "bottom bottom",
             scrub: 1,
           },
         })
-        .from(setOfColumnsOne, {
-          yPercent: 20,
-          stagger: 0.01,
+        .from(curtains, {
+          yPercent: 100,
+          stagger: 0.1,
           ease: "power3.out",
         })
         .from(
-          setOfColumnsTwo,
+          projectWords,
           {
-            yPercent: 30,
-            stagger: 0.01,
-            ease: "power3.out",
-          },
-          "<"
-        )
-        .from(
-          setOfColumnsThree,
-          {
-            yPercent: 45,
-            stagger: 0.01,
-            ease: "power3.out",
-          },
-          "<"
-        )
-        .from(
-          contactWords,
-          {
-            yPercent: 100,
-            stagger: 0.03,
+            stagger: 0.05,
+            filter: "blur(10px)",
+            opacity: 0,
             ease: "power3.out",
           },
           "-=0.5"
-        )
-        .from(
-          contactSubwords,
-          {
-            yPercent: 100,
-            stagger: 0.03,
-            ease: "power3.out",
-          },
-          "-=0.5"
-        )
-        .from(".black-cat", {
-          yPercent: 500,
-          ease: "power3.out",
-        });
-
-      gsap.to(".black-cat", {
-        rotateX: 35,
-        duration: 2,
-        ease: "power3.out",
-        repeat: -1,
-        yoyo: true,
-      });
+        );
     }, container);
 
     return () => ctx.revert();
@@ -200,10 +219,10 @@ export default function Home() {
 
   return (
     <main ref={container} className="flex-1">
-      <section className="hero flex items-center justify-center w-full h-screen border-y bg-[#f2f2f2]">
+      <section className="hero flex items-center justify-center w-full h-screen border-y bg-[#fafafa]">
         <div className="container w-full">
           <View className="w-full h-screen">
-            <Float speed={1} rotationIntensity={2} floatIntensity={1}>
+            <Float speed={2} rotationIntensity={4} floatIntensity={1}>
               <Blob scale={2} />
             </Float>
             <Typography />
@@ -212,146 +231,208 @@ export default function Home() {
         </div>
       </section>
       <section
-        id="about"
-        ref={aboutRef}
-        className="about-section relative flex justify-center items-center w-full h-screen bg-[#101010] text-[#edebe8] overflow-hidden"
+        ref={projectsRef}
+        id="projects"
+        className="relative flex items-center pb-16 md:pb-36 justify-center w-full min-h-screen bg-[#fafafa] overflow-hidden"
       >
-        <div className="about-container w-[80%] flex flex-col gap-8">
-          <p className="about-text text-lg uppercase tracking-[0.3em]">
-            ABOUT ME
-          </p>
-          <p className="about-copy text-3xl md:text-6xl font-medium">
-            Hi, I&apos;m Kartikey, a{" "}
-            <span className="text-yellow-500">self-proclaimed</span> creative
-            web developer. I create bespoke web experiences by spending half of
-            my time coding and other half convincing my code to work.
-          </p>
+        <div className="min-h-screen w-full pt-8 md:pt-20 flex flex-col items-center gap-10">
+          <div className="flex justify-center w-fit h-fit overflow-hidden">
+            <p className="project-head text-xl tracking-[0.1em] uppercase">
+              My Experiments with Web
+            </p>
+          </div>
+          <div className="flex flex-col justify-center items-center w-[95%] md:w-[60%] h-full">
+            {projects.map((project, index) => {
+              return (
+                <Link
+                  href={project.link}
+                  key={index}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="flex w-full justify-between items-center p-[50px 100px 50px 100px] border-t-[1px] border-[#c9c9c9] cursor-pointer transition-all duration-200 hover:opacity-50"
+                >
+                  <h2 className="text-[clamp(2.5rem,3.75vw,3.75rem)] m-0 transition-all duration-300 hover:-translate-x-[10px]">
+                    {project.name}
+                  </h2>
+
+                  <p className="hidden md:block transition-all font-light duration-300 hover:-translate-x-[10px]">
+                    {project.subtitle}
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
       <section
-        id="projects"
-        className="relative flex items-start pb-16 md:pb-36 justify-center w-full min-h-screen bg-[#101010] text-[#edebe8] overflow-hidden"
+        id="about"
+        ref={aboutRef}
+        className="about-section relative flex justify-center items-center w-full min-h-screen bg-[#fafafa] overflow-hidden"
       >
-        <div className="work-list flex flex-col w-full">
-          <p className="about-text text-lg pl-8 md:pl-32 mb-8 uppercase tracking-[0.3em]">
-            MY EXPERIMENTS WITH WEB
+        <div className="about-container w-[95%] md:w-[60%] flex flex-col items-start justify-center py-8 md:py-20 gap-8">
+          <p className="about-text text-center text-lg uppercase tracking-[0.3em]">
+            ABOUT ME
           </p>
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="project-item relative w-full h-[110px] border-opacity-30 border-y border-[#edebe8] group"
-            >
-              <Link
-                href={project.link}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <div className="project-title absolute pl-8 md:pl-28 pr-0 md:pr-28 inset-0 flex items-center w-full h-full text-3xl md:text-9xl font-bold uppercase text-[#edebe8] bg-[#101010] group-hover:bg-yellow-500 group-hover:text-[#fff] transition-all duration-500">
-                  <span className="inline-block text-center whitespace-nowrap">
-                    {project.name}
-                  </span>
-                </div>
-                <div className="project-description absolute inset-0 flex items-center justify-between w-full h-full cursor-pointer">
-                  <div className="w-2/3 h-full hidden md:block" />
-                  <div className="w-full md:w-1/3 h-full px-8 md:px-28 flex items-center justify-start md:justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 text-sm text-[#bcb3a8] bg-[#101010] group-hover:bg-yellow-500 group-hover:text-[#fff]">
-                    {project.description}
-                  </div>
-                </div>
-              </Link>
+          <p className="about-copy text-xl md:text-4xl font-semibold text-[#404040]">
+            "In a world full of cookie-cutter websites and Ctrl+C, Ctrl+V
+            developers, one individual dared to ask...'But what if the website
+            had... personality?🤔'"
+          </p>
+          <div className="about-copy-two text-md md:text-xl my-[15rem]">
+            &#40;pause for effect 🥁&#41;
+          </div>
+          <p className="about-copy-three text-xl md:text-4xl font-semibold mb-[6rem] md:mb-[10rem] text-[#404040]">
+            That individual? Me. Obviously😎 Otherwise this would be weird.
+          </p>
+          <p className="about-copy-four text-xl md:text-4xl font-semibold text-[#404040] uppercase">
+            So Who Am I?
+          </p>
+          <div className="h-[1px] w-full bg-[#b0b0b0]" />
+          <div className="w-fit h-fit flex flex-col justify-center gap-4">
+            <div className="img-placeholder h-[300px] w-[230px] md:h-[500px] md:w-[450px] ">
+              <Image
+                src={hero}
+                alt="hero"
+                className="w-full h-full object-cover"
+                height={600}
+                width={600}
+              />
             </div>
-          ))}
+            <p className="text-sm md:text-sm font-semibold text-[#565656]">
+              ✨Throwback to the times when I was super good-looking✨
+            </p>
+          </div>
+          <p className="about-copy-five text-md md:text-xl">
+            I am a creative web developer - basically a digital spiderman, minus
+            the spidey sense &#40;because Javascript doesn&apos;t support that
+            yet&#41;. I specialize in crafting bespoke web experiences that
+            don't just sit there looking pretty - they wink at you, do a little
+            dance, and occasionally steal your attention like that one girl in
+            the subway😉
+          </p>
+          <p className="about-copy-six text-xl md:text-4xl font-semibold text-[#404040] mt-8 md:mt-20">
+            Skills?
+          </p>
+          <p className="about-copy-seven text-md md:text-xl">
+            Oh, I've got plenty. Animations smoother than your skin.
+            &#40;Seriously, start using a Sunscreen&#41; <br />
+            Interactions snappier than your Wi-Fi when no one else is home{" "}
+            <br />
+            And code so clean... okay well this one's a bit debatable🤭
+          </p>
+          <p className="about-copy-eight text-md md:text-xl">
+            But beyond the pixels and the code, I believe websites should feel
+            alive - like they've got a heartbeat. Not in a creepy{" "}
+            <span className="italic">"it's...sentient"</span> way, but in a{" "}
+            <span className="italic">
+              "hey, this is fun, and I can't stop scrolling"
+            </span>{" "}
+            way.
+          </p>
+          <p className="about-copy-nine text-md md:text-xl">
+            So, if you're looking for someone who can turn{" "}
+            <span className="italic">"just a website"</span> into an experience
+            that sticks - like that one catchy song you heard once during a
+            heartbreak and now it lives rent-free in your head - <br />
+            <span className="font-semibold">
+              Congratulations! You found me🎊
+            </span>
+          </p>
+          <p className="about-copy-ten text-xl md:text-4xl font-semibold text-[#404040] mt-8 md:mt-20">
+            What Next?
+          </p>
+          <p className="about-copy-eleven text-md md:text-xl">
+            What? You are not convinced yet? The only thing left now is for you
+            to{" "}
+            <span className="line-through">
+              gimme all your hard-earned money
+            </span>{" "}
+            reach out to me 💌 <br /> <br /> I love to chat - whether it's about
+            work or convincing you to watch an underrated movie gem🍿
+          </p>
+          <Link
+            href="mailto:imkpandey31@gmail.com"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="bg-white hover:bg-gray-200 text-[#1A1A1A] font-semibold py-2 px-4 border border-gray-900 rounded shadow"
+          >
+            Send me a mail
+          </Link>
         </div>
       </section>
       <section
         id="contact"
         ref={contactRef}
-        className="relative flex items-center justify-center w-full h-[200vh] bg-yellow-500 text-[#bcb3a8] overflow-hidden"
+        className="relative w-full h-[400px] bg-[#1A1A1A] text-[#c0c0c0]"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
-        <div className="set-one w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-two w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-three w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-one w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-two w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-one w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-three w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-two w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-one w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-three w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-three w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="set-two w-1/12 h-[200vh] bg-[#101010]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[200vh] flex flex-col items-center justify-center gap-8">
-          <h2 className="contact-head text-[clamp(2.5rem,7vw,7rem)] tracking-tight leading-tight text-center font-black uppercase text-yellow-500 z-[2]">
-            <span className="w-fit h-fit overflow-hidden">Not afraid of</span>
-            <br />
-            <span className="w-fit h-fit overflow-hidden">bothering me</span>
-            <br />
-            <span className="w-fit h-fit overflow-hidden">
-              while I'm watching
-            </span>
-            <br />
-            <span className="w-fit h-fit overflow-hidden">anime?</span>
-          </h2>
-          <p className="contact-subhead text-[clamp(2rem,4vw,4rem)] mt-8 md:mt-4 text-center uppercase font-semibold w-[90%] md:w-fit h-fit overflow-hidden text-gray-300">
-            <Link href="mailto:imkpandey31@gmail.com">
-              Let&apos;s make something big together*
-            </Link>
-          </p>
-          <div className="content w-[360px] h-[100px] z-[2] overflow-hidden">
-            <div className="black-cat"></div>
-          </div>
-          <div className="contact-links mt-4 md:mt-8 flex w-fit h-fit justify-center items-center gap-4 md:gap-8 z-[2]">
-            <Link
-              className="w-10 h-10"
-              href="mailto:imkpandey31@gmail.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="hover:fill-white"
-              >
-                <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
-              </svg>
-            </Link>
-            <Link
-              className="w-10 h-10"
-              href="https://linkedin.com/in/imkpandey"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="hover:fill-white"
-              >
-                <path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path>
-              </svg>
-            </Link>
-            <Link
-              className="w-10 h-10"
-              href="https://github.com/imkpandey"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="hover:fill-white"
-              >
-                <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
-              </svg>
-            </Link>
+        <div className="relative h-[calc(100vh+400px)] -top-[100vh]">
+          <div className="sticky top-[calc(100vh-400px)] h-[400px]">
+            <div className="bg-[#1A1A1A] py-2 md:py-8 px-4 md:px-12 h-full w-full flex flex-col justify-between">
+              <div className="flex flex-col justify-start items-start gap-8">
+                <h1 className="text-[6vw] leading-[0.8] mt-10">
+                  Welcome to the Dark side!
+                </h1>
+                <p className="text-[clamp(0.8rem,1.3vw,1.3rem)]">
+                  Just kidding, it's just some of my socials
+                </p>
+                <div className="contact-links flex w-fit h-fit justify-center items-center gap-4 md:gap-8 z-[2]">
+                  <Link
+                    className="w-10 h-10"
+                    href="mailto:imkpandey31@gmail.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="hover:fill-white"
+                    >
+                      <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
+                    </svg>
+                  </Link>
+                  <Link
+                    className="w-10 h-10"
+                    href="https://linkedin.com/in/imkpandey"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="hover:fill-white"
+                    >
+                      <path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path>
+                    </svg>
+                  </Link>
+                  <Link
+                    className="w-10 h-10"
+                    href="https://github.com/imkpandey"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="hover:fill-white"
+                    >
+                      <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              <p>©2025 imkpandey</p>
+            </div>
           </div>
         </div>
-        <div className="footer-text absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center">
+        {/* <div className="footer-text absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center">
           <p className="text-center text-[clamp(0.75rem,1.25vw,1.25rem)]">
             *That's what she said :/
           </p>
-        </div>
+        </div> */}
       </section>
     </main>
   );
