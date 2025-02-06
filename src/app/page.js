@@ -288,7 +288,7 @@ export default function Home() {
             So Who Am I?
           </p>
           <div className="h-[1px] w-full bg-[#b0b0b0]" />
-          <div className="w-fit h-fit flex flex-col justify-center gap-4">
+          <div className="w-full bg-red-300 h-fit flex flex-col items-center md:items-start justify-center gap-4">
             <div className="img-placeholder h-[300px] w-[230px] md:h-[500px] md:w-[450px] ">
               <Image
                 src={hero}
@@ -298,7 +298,7 @@ export default function Home() {
                 width={600}
               />
             </div>
-            <p className="text-sm md:text-sm font-semibold text-[#565656]">
+            <p className="text-xs md:text-sm font-semibold text-[#565656] whitespace-nowrap">
               ✨Throwback to the times when I was super good-looking✨
             </p>
           </div>
