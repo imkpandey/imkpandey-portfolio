@@ -106,7 +106,7 @@ const projects = [
     name: "R3F-INFINITY-TRAIL",
     subtitle: "Three.js Experiment",
     src: "/",
-    link: "https://r3f-infinity-trail.vercel.app",
+    link: "https://r3f-infinity-trails.vercel.app",
     color: "#706D63",
   },
 ];
