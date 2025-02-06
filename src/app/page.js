@@ -130,7 +130,6 @@ export default function Home() {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const curtains = gsap.utils.toArray(".curtain");
       const projectHead = new SplitType(".project-head");
       const projectWords = projectHead.words;
 
@@ -181,9 +180,9 @@ export default function Home() {
           duration: 1,
           scrollTrigger: {
             trigger: element,
-            start: "top 90%", // Animation starts when the top of the element reaches 80% of the viewport
-            end: "bottom 70%", // Animation ends when the bottom of the element reaches 60% of the viewport
-            scrub: true, // Smooth scroll animation
+            start: "top 90%",
+            end: "bottom 70%",
+            scrub: true,
           },
         });
       });
@@ -196,11 +195,6 @@ export default function Home() {
             end: "bottom bottom",
             scrub: 1,
           },
-        })
-        .from(curtains, {
-          yPercent: 100,
-          stagger: 0.1,
-          ease: "power3.out",
         })
         .from(
           projectWords,
