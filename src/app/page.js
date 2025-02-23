@@ -17,6 +17,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import Typography from "@/components/canvas/typography";
 import hero from "@/assets/hero.jpg";
+import certificate from "@/assets/certificate.jpg";
 import Project from "@/components/ui/Project";
 import LogoTicker from "@/components/ui/LogoTicker";
 
@@ -157,8 +158,12 @@ export default function Home() {
       const aboutWordsNine = aboutCopyNine.words;
       const aboutCopyTen = new SplitType(".about-copy-ten");
       const aboutWordsTen = aboutCopyTen.words;
-      // const aboutCopyEleven = new SplitType(".about-copy-eleven");
-      // const aboutWordsEleven = aboutCopyEleven.words;
+      const aboutCopyEleven = new SplitType(".about-copy-eleven");
+      const aboutWordsEleven = aboutCopyEleven.words;
+      const aboutCopyTwelve = new SplitType(".about-copy-twelve");
+      const aboutWordsTwelve = aboutCopyTwelve.words;
+      const aboutCopyThirteen = new SplitType(".about-copy-thirteen");
+      const aboutWordsThirteen = aboutCopyThirteen.words;
 
       const aboutCopyElements = gsap.utils.toArray([
         aboutHeadWords,
@@ -173,6 +178,9 @@ export default function Home() {
         aboutWordsEight,
         aboutWordsNine,
         aboutWordsTen,
+        aboutWordsEleven,
+        aboutWordsTwelve,
+        aboutWordsThirteen,
       ]);
 
       aboutCopyElements.forEach((element) => {
@@ -297,7 +305,7 @@ export default function Home() {
             <div className="img-placeholder h-[500px] w-[400px]">
               <Image
                 src={hero}
-                alt="hero"
+                alt="Just a little rockstar version of me"
                 className="w-full h-full object-cover"
                 height={600}
                 width={600}
@@ -359,9 +367,56 @@ export default function Home() {
             </span>
           </p>
           <p className="about-copy-ten text-xl md:text-4xl font-semibold text-[#404040] mt-8 md:mt-20">
-            What Next?
+            Let's talk shop!💻
           </p>
           <p className="about-copy-eleven text-md md:text-xl">
+            Let's say you're a brand, you&apos;ve got a product, and you need a
+            landing page that doesn't just exist – it demands attention. Imagine
+            it: a beautifully designed, responsive, and interactive page that
+            instantly communicates who you are and what you do. One that not
+            only looks good, but feels good to use. You need a landing page that
+            speaks to your audience, captures their attention, and converts them
+            into loyal customers. Loyal customers = more money for you = you
+            happy = more money for me = me happy🤑
+          </p>
+
+          <p className="about-copy-twelve font-semibold text-md md:text-xl">
+            That&apos;s where I come in👋
+          </p>
+
+          <p className="about-copy-thirteen text-md md:text-xl">
+            I specialize in creating websites that don't just make a good first
+            impression – they{" "}
+            <span className="font-semibold">make the impression💫</span>. I
+            blend creative design with flawless functionality to craft unique
+            user experiences that keep people engaged from the moment they land
+            on your page. Whether it&apos;s stunning visuals, dynamic
+            animations, or a seamless flow of content, I&apos;ll make sure your
+            audience stays hooked. With the right amount of strategy,
+            creativity, and some good ol' coding magic, I&apos;ll make sure your
+            website stands out and performs. <br />
+            <br />
+            But hey, if you ever need a break from all the coding, I&apos;m also
+            here to whip up some gourmet pasta for you🍝
+          </p>
+          <div className="relative w-full h-full flex flex-col items-center md:items-start justify-center gap-4 overflow-hidden">
+            <div className="img-placeholder h-[500px] w-[400px]">
+              <Image
+                src={certificate}
+                alt="certificate"
+                className="w-full h-full object-cover"
+                height={600}
+                width={600}
+              />
+            </div>
+            <p className="text-xs md:text-sm font-semibold text-[#565656] whitespace-nowrap">
+              A totally authentic certificate to prove my culinary skills 🍴
+            </p>
+          </div>
+          <p className="about-copy-fourteen text-xl md:text-4xl font-semibold text-[#404040] mt-8 md:mt-20">
+            What Next?
+          </p>
+          <p className="about-copy-fifteen text-md md:text-xl">
             What? You are not convinced yet? The only thing left now is for you
             to{" "}
             <span className="line-through">
