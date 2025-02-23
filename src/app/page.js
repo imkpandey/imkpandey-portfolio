@@ -17,8 +17,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import Typography from "@/components/canvas/typography";
 import hero from "@/assets/hero.jpg";
-import { Divide } from "lucide-react";
 import Project from "@/components/ui/Project";
+import LogoTicker from "@/components/ui/LogoTicker";
 
 const Common = dynamic(() => import("@/components/canvas/common"), {
   ssr: false,
@@ -68,21 +68,21 @@ const projects = [
     color: "#000000",
   },
   {
-    name: "MAHADEV DHAM 3D",
+    name: "BOLT AI LANDING PAGE",
     subtitle: "Design & Development",
     src: "/karauli.jpg",
-    link: "https://karauli.vercel.app",
+    link: "https://bolt-ai-gray.vercel.app",
     color: "#8C8C8C",
   },
   {
-    name: "STARCLINCH",
+    name: "KARAULI DHAM 3D",
     subtitle: "Design & Development",
-    src: "/starclinch.jpg",
-    link: "https://starclinch-eta.vercel.app",
+    src: "/karauli.jpg",
+    link: "https://karauli.vercel.app",
     color: "#EFE8D3",
   },
   {
-    name: "AFK PHARMA WEBSITE",
+    name: "AFK PHARMA",
     subtitle: "Design & Development",
     src: "/afk.jpg",
     link: "https://afk-pharma.vercel.app",
@@ -145,6 +145,8 @@ export default function Home() {
       const aboutWordsFour = aboutCopyFour.words;
       const aboutCopyFive = new SplitType(".about-copy-five");
       const aboutWordsFive = aboutCopyFive.words;
+      const aboutCopyFiveFive = new SplitType(".about-copy-fivefive");
+      const aboutWordsFiveFive = aboutCopyFiveFive.words;
       const aboutCopySix = new SplitType(".about-copy-six");
       const aboutWordsSix = aboutCopySix.words;
       const aboutCopySeven = new SplitType(".about-copy-seven");
@@ -165,6 +167,7 @@ export default function Home() {
         aboutWordsThree,
         aboutWordsFour,
         aboutWordsFive,
+        aboutWordsFiveFive,
         aboutWordsSix,
         aboutWordsSeven,
         aboutWordsEight,
@@ -200,18 +203,18 @@ export default function Home() {
         },
       });
 
-      gsap.from(".project-container", {
-        opacity: 0,
-        filter: "blur(10px)",
-        ease: "power3.out",
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".project-container",
-          start: "top 90%",
-          end: "bottom 70%",
-          scrub: true,
-        },
-      });
+      // gsap.from(".project-container", {
+      //   opacity: 0,
+      //   filter: "blur(10px)",
+      //   ease: "power2.out",
+      //   duration: 1,
+      //   scrollTrigger: {
+      //     trigger: ".project-container",
+      //     start: "top bottom",
+      //     end: "bottom 95%",
+      //     scrub: true,
+      //   },
+      // });
     }, container);
 
     return () => ctx.revert();
@@ -235,13 +238,13 @@ export default function Home() {
         id="projects"
         className="relative flex items-center pb-16 md:pb-36 justify-center w-full min-h-screen bg-[#fafafa] overflow-hidden"
       >
-        <div className="min-h-screen w-full pt-8 md:pt-20 flex flex-col items-center gap-10">
+        <div className="min-h-screen h-max w-full pt-8 md:pt-20 flex flex-col items-center gap-10">
           <div className="flex justify-center w-fit h-fit overflow-hidden">
             <p className="project-head text-xl tracking-[0.1em] uppercase">
               My Experiments with Web
             </p>
           </div>
-          <div className="project-container flex flex-col justify-center items-center w-[95%] md:w-[60%] h-full">
+          <div className="relative project-container flex flex-col justify-center items-center w-[95%] md:w-[60%] h-full">
             {projects.map((project, index) => {
               return (
                 <Link
@@ -249,15 +252,17 @@ export default function Home() {
                   key={index}
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="flex w-full justify-between items-center p-[50px 100px 50px 100px] border-t-[1px] border-[#c9c9c9] cursor-pointer transition-all duration-200 hover:opacity-50"
+                  className="relative flex w-full justify-between items-center px-[5px] border-t-[1px] border-[#c9c9c9] cursor-pointer transition duration-200 overflow-hidden group hover:text-white"
                 >
-                  <h2 className="text-[clamp(2.5rem,3.75vw,3.75rem)] m-0 transition-all duration-300 hover:-translate-x-[10px]">
+                  <h2 className="text-[clamp(2.5rem,3.75vw,3.75rem)] m-0 group-hover:translate-x-5 transition-transform duration-200 ease-linear z-[2]">
                     {project.name}
                   </h2>
 
-                  <p className="hidden md:block transition-all font-light duration-300 hover:-translate-x-[10px]">
+                  <p className="hidden md:block font-light group-hover:-translate-x-5 transition-transform duration-200 ease-linear z-[2]">
                     {project.subtitle}
                   </p>
+                  <div className="project-preview hidden md:block absolute bottom-[20px] right-[20px] w-[30%] h-[30%] z-[2]"></div>
+                  <div className="absolute inset-0 bg-black -translate-y-full group-hover:translate-y-0 transition-transform ease-out duration-200"></div>
                 </Link>
               );
             })}
@@ -269,27 +274,27 @@ export default function Home() {
         ref={aboutRef}
         className="about-section relative flex justify-center items-center w-full min-h-screen bg-[#fafafa] overflow-hidden"
       >
-        <div className="about-container w-[95%] md:w-[60%] flex flex-col items-start justify-center py-8 md:py-20 gap-8">
+        <div className="about-container w-[95%] md:w-[50%] mx-auto flex flex-col items-start justify-center py-8 md:py-20 gap-8">
           <p className="about-text text-center text-lg uppercase tracking-[0.3em]">
             ABOUT ME
           </p>
-          <p className="about-copy text-xl md:text-4xl font-semibold text-[#404040]">
-            "In a world full of cookie-cutter websites and Ctrl+C, Ctrl+V
+          <p className="about-copy text-xl md:text-4xl font-medium text-[#404040]">
+            In a world full of cookie-cutter websites and Ctrl+C, Ctrl+V
             developers, one individual dared to ask...'But what if the website
-            had... personality?🤔'"
+            had... personality?🤔'
           </p>
-          <div className="about-copy-two text-md md:text-xl my-[15rem]">
+          <div className="about-copy-two text-md md:text-xl my-[5rem]">
             &#40;pause for effect 🥁&#41;
           </div>
-          <p className="about-copy-three text-xl md:text-4xl font-semibold mb-[6rem] md:mb-[10rem] text-[#404040]">
-            That individual? Me. Obviously😎 Otherwise this would be weird.
+          <p className="about-copy-three text-xl md:text-4xl font-medium mb-[6rem] md:mb-[10rem] text-[#404040]">
+            That individual? Me. Obviously. Otherwise this would be weird 😌
           </p>
           <p className="about-copy-four text-xl md:text-4xl font-semibold text-[#404040] uppercase">
             So Who Am I?
           </p>
           <div className="h-[1px] w-full bg-[#b0b0b0]" />
-          <div className="w-full h-fit flex flex-col items-center md:items-start justify-center gap-4">
-            <div className="img-placeholder h-[300px] w-[230px] md:h-[500px] md:w-[450px] ">
+          <div className="relative w-full h-full flex flex-col items-center md:items-start justify-center gap-4 overflow-hidden">
+            <div className="img-placeholder h-[500px] w-[400px]">
               <Image
                 src={hero}
                 alt="hero"
@@ -310,9 +315,24 @@ export default function Home() {
             dance, and occasionally steal your attention like that one girl in
             the subway😉
           </p>
+          <p className="about-copy-fivefive text-md md:text-xl">
+            With a passion for blending design and functionality, I&apos;m on a
+            mission to turn the web into a more dynamic, interactive, and
+            visually stunning place. Whether it's smooth animations, seamless
+            user interfaces, or custom features that surprise and delight, I
+            thrive on pushing the boundaries of what&apos;s possible online. But
+            let&apos;s be clear: my goal is never just to make things "look
+            cool" (though, don't get me wrong, I love making things look cool).
+            It&apos;s about creating experiences that users actually enjoy –
+            that leave them not just impressed, but engaged and coming back for
+            more💖
+          </p>
           <p className="about-copy-six text-xl md:text-4xl font-semibold text-[#404040] mt-8 md:mt-20">
             Skills?
           </p>
+          <div className="relative w-full h-[100px]">
+            <LogoTicker />
+          </div>
           <p className="about-copy-seven text-md md:text-xl">
             Oh, I've got plenty. Animations smoother than your skin.
             &#40;Seriously, start using a Sunscreen&#41; <br />

@@ -19,6 +19,7 @@
     "@types/three": "^0.160.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^12.4.7",
     "gsap": "^3.12.5",
     "lamina": "^1.1.23",
     "lucide-react": "^0.311.0",
