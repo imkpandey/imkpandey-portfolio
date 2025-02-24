@@ -56,10 +56,10 @@ export default function Blob() {
         }}
         ref={ref}
         args={[width / 10, 128, 128]}
-        position={[0, -5, 0]}
+        position={[0, 0, 0]}
       >
         <LayerMaterial
-          color={"#D0D0D0"}
+          color={"#d0d0d0"}
           lighting={"physical"} //
           transmission={1}
           roughness={0}
@@ -70,7 +70,7 @@ export default function Blob() {
             far={0.661999999999932}
             origin={[-0.6920000000000004, 0.4250000000000003, 0]}
             colorA={"#000000"}
-            colorB={"#1A1A1A"}
+            colorB={"#d0d0d0"}
           />
           <Displace ref={displaceRef} strength={4} scale={0.15} />
           <Fresnel

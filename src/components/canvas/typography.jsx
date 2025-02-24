@@ -24,7 +24,7 @@ export default function Typography({
       <Text
         material-transparent={false}
         fontSize={vw(SIZE)}
-        position={[0, vh(30), 0]}
+        position={[0, vh(5), 0]}
         color={"#404040"}
         font={"/Oxygen-Regular.ttf"}
         letterSpacing={-0.01}
@@ -33,10 +33,10 @@ export default function Typography({
       </Text>
       <Text
         material-transparent={false}
-        fontSize={SIZE / 2.5}
+        fontSize={SIZE / 2}
         color={"#101010"}
         font={"/Oxygen.ttf"}
-        position={[0, vh(42), 0]}
+        position={[0, vh(20), 0]}
         letterSpacing={-0.05}
       >
         {LINE_2}

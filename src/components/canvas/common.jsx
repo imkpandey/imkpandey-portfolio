@@ -33,7 +33,7 @@ export default function Common({ color, controls }) {
       {/* color && <color attach='background' args={[color]} /> */}
       <ambientLight intensity={2} />
       <directionalLight intensity={1.5} castShadow />
-      <Environment preset="warehouse" />
+      <Environment preset="studio" />
       {/* <EffectComposer disableNormalPass>
         <Bloom mipmapBlur luminanceThreshold={0.8} intensity={0.1} />
       </EffectComposer> */}
