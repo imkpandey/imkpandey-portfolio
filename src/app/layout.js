@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
                     </span>
                   </Link>
                   <Link
-                    href="https://drive.google.com/file/d/1bnQf2G6TMYGs6LyFyKQwa9PbY9pSAZw6/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1Q_6iy1kxzpSodkz8Ew6twxRUnIobnij_/view?usp=sharing"
                     className="nav-link p-1 md:p-4 inline-block relative cursor-pointer"
                     rel="noopener noreferrer"
                     target="_blank"
