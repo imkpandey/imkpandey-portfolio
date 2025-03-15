@@ -69,12 +69,19 @@ const projects = [
     color: "#000000",
   },
   {
-    name: "BOLT AI LANDING PAGE",
+    name: "BOLT AI",
     subtitle: "Design & Development",
     src: "/karauli.jpg",
     link: "https://bolt-ai-gray.vercel.app",
     color: "#8C8C8C",
   },
+  {
+    name: "3D MODEL VIEWER",
+    subtitle: "Design & Development",
+    src: "/",
+    link: "https://3d-modeller.vercel.app",
+    color: "#EFE8D3",
+  }
   {
     name: "KARAULI DHAM 3D",
     subtitle: "Design & Development",
