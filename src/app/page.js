@@ -81,7 +81,7 @@ const projects = [
     src: "/",
     link: "https://3d-modeller.vercel.app",
     color: "#EFE8D3",
-  }
+  },
   {
     name: "KARAULI DHAM 3D",
     subtitle: "Design & Development",
